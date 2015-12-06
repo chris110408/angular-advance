@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html data-ng-app="myapp">
+<head lang="en" >
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+
+    <script src="./app.js"></script>
+</head>
+<body data-ng-controller="mainCtrl as vm">
+
+<div debug="user" type="array"></div>
+
+
+<script type="text/javascript">
+    var  name =  "The Window" ;
+    var  object = {
+        name :  "My Object" ,
+        getNameFunc :  function (){
+            return  function (){
+
+                return  this .name;
+            };
+        }
+    };
+    alert(object.getNameFunc());
+</script>
+</body>
+</html>

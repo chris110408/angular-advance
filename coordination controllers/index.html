@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html data-ng-app="myapp">
+<head lang="en" >
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.2.2/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-animate.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-sanitize.js"></script>
+
+</head>
+<body data-ng-controller="mainCtrl">
+
+<button ng-click="addContent()">
+    Add SomeThing
+
+</button>
+
+<h3 class="message" style="text-align: center"ng-repeat="m in message">
+   <span style="background:yellow;"> {{m}}</span>
+</h3>
+
+<div content-handler="feed" on-change="onUpdate(element,action)">
+
+    <div ng-repeat="el in feed" content>
+        <h2>Element {{$index +1}}</h2>
+        <div ng-bind-html="el.content"></div>
+        <button ng-click="remove(el)">Remove</button>
+
+    </div>
+
+</div>
+
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>-->
+
+<script src="./app.js"></script>
+</body>
+</html>
